@@ -1,9 +1,46 @@
 <template>
   <div class="shop">
-
+    <div class="products-with-image">
+      <div class="product-with-image" v-for="product in $root.$data.products_with_images" :key="product.name">
+        <div class='one-col'>
+          <p class="shop-item title">{{product.name}}&emsp;{{product.price}}</p>
+          <a class="shop-item link" href="/schedule" v-on:click="set_selected_product(product)">Schedule Appointment</a>
+          <div class="image_title_set">
+            <img v-bind:src="product.image_before"/>
+            <p class='image_description'>Before</p>
+          </div>
+          <div class="image_title_set">
+            <img v-bind:src="product.image_after"/>
+            <p class='image_description'>After</p>
+          </div>
+        </div>
+        <hr class="shop-divider">
+      </div>
+    </div>
   </div>
 </template>
 
-<style>
+<script>
+export default {
+  name: 'Shop',
+  methods: {
+    set_selected_product(product) {
+      console.log(product);
+      this.$root.$data.selected_product = product;
+    }
+  }
+}
+</script>
 
+<style>
+.shop-item {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.shop-divider {
+  margin-top: 20px;
+}
 </style>
