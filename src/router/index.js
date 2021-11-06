@@ -6,7 +6,9 @@ import Shop from "../views/Shop.vue";
 import Schedule from "../views/Schedule.vue"
 import Contact from "../views/Contact"
 import FAQ from "../views/FAQ"
+import VueCalendly from 'vue-calendly';
 
+Vue.use(VueCalendly);
 Vue.use(VueRouter);
 
 const routes = [
