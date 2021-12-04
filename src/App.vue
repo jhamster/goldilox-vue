@@ -45,6 +45,11 @@
               <p class="menu-text">FAQ</p>
             </div>
           </router-link>
+          <router-link to="/reviews">
+            <div class="menu-item">
+              <p class="menu-text">Reviews</p>
+            </div>
+          </router-link>
         </div>
         <router-view />
       </div>
